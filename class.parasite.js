@@ -1,11 +1,10 @@
-class Parasite {
+class Parasite extends LivingCreature{
 
-    constructor(x, y) {
-        this.x = x;
-        this.y = y;
-        this.multiply = 0;
+    constructor(x, y,index) {
+        super(x, y, index);
         this.energy = 3;
-        this.directions = [];
+        
+
     }
 
     //շրջապատի հետազոտության մատրիցը
@@ -43,19 +42,9 @@ class Parasite {
     }
     //հետազոտում է շրջապատը, որոնում է հետաքրքրող կերպարներին
     //կերպարը որոշվում է t արգումենտով
-    chooseCell(t) {
+    chooseCell(character) {
         this.getNewDirections();
-        let fond = [];
-        for (let i in this.directions) {
-            let x = this.directions[i][0];
-            let y = this.directions[i][1];
-            if (x >= 0 && x < matrix[0].length && y >= 0 && y < matrix.length) {
-                if (matrix[y][x] == t) {
-                    fond.push(this.directions[i]);
-                }
-            }
-        }
-        return fond;
+        return super.chooseCell(character);
     }
     choosecell() {
         this.getnewDirections();

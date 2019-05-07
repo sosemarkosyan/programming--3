@@ -1,13 +1,11 @@
-class Predator {
+class Predator extends LivingCreature{
 
-    constructor(x, y) {
-        this.x = x;
-        this.y = y;
-        this.multiply = 0;
+    constructor(x, y,index) {
+        super(x, y, index);
         this.energy = 1;
-        this.directions = [];
-    }
+        
 
+    }
     //շրջապատի հետազոտության մատրիցը
     getNewDirections() {
         this.directions = [
@@ -24,19 +22,9 @@ class Predator {
 
     //հետազոտում է շրջապատը, որոնում է հետաքրքրող կերպարներին
     //կերպարը որոշվում է t արգումենտով
-    chooseCell(t) {
+    chooseCell(character) {
         this.getNewDirections();
-        let fo = [];
-        for (let i in this.directions) {
-            let x = this.directions[i][0];
-            let y = this.directions[i][1];
-            if (x >= 0 && x < matrix[0].length && y >= 0 && y < matrix.length) {
-                if (matrix[y][x] == t) {
-                    fo.push(this.directions[i]);
-                }
-            }
-        }
-        return fo;
+        return super.chooseCell(character);
     }
 
 

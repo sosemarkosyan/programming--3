@@ -1,11 +1,9 @@
-//խոտակերի կլասը
-class GrassEater {
-    constructor(x, y) {
-        this.x = x;
-        this.y = y;
-        this.multiply = 0;
+class GrassEater extends LivingCreature{
+     constructor(x, y,index) {
+        super(x, y, index);
         this.energy = 8;
-        this.directions = [];
+        
+
     }
 
     //շրջապատի հետազոտության մատրիցը
@@ -26,18 +24,8 @@ class GrassEater {
     //կերպարը որոշվում է t արգումենտով
     chooseCell(character) {
         this.getNewDirections();
-        let f = [];
-        for (let i in this.directions) {
-            let x = this.directions[i][0];
-            let y = this.directions[i][1];
-            if (x >= 0 && x < matrix[0].length && y >= 0 && y < matrix.length) {
-                if (matrix[y][x] == character) {
-                    f.push(this.directions[i]);
-                }
-            }
-        }
-        return f;
-    }
+        return super.chooseCell(character);
+    }  
 
 
 
