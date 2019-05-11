@@ -1,4 +1,5 @@
-class Butterfly extends LivingCreature{
+let LivingCreature = require("Lc");
+module.exports = class Butterfly extends LivingCreature{
 
     constructor(x, y,index) {
         super(x, y, index);

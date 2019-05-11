@@ -1,5 +1,5 @@
-//խոտի կլասը
-class Grass extends LivingCreature{
+let LivingCreature = require("Lc");
+module.exports = class Grass extends LivingCreature{
     constructor(x, y,index) {
         super(x, y, index);
         this.energy = 5;

@@ -1,4 +1,5 @@
-class Parasite extends LivingCreature{
+let LivingCreature = require("Lc");
+module.exports = class Parasite extends LivingCreature{
 
     constructor(x, y,index) {
         super(x, y, index);
